@@ -22,10 +22,10 @@ na facilidade de consumo e implementação.
 
 Apesar de não utilizar nenhum framework, segui POO, de certo modo.
 
-
 ## Dados armazenados (já listados ou que você acrescentaria)
 
-A príncipo não acresentaria nenhum dado armazenado. Acredito que os informados já ajudaram na execução do teste.
+A príncipo não acresentaria nenhum dado armazenado. 
+Acredito que os informados já ajudaram na execução do teste.
 
 --------------------------------------------------------------------------------
 ## Preparação

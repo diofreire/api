@@ -115,17 +115,17 @@ class Pessoa
      */
     public function getEndereco()
     {
-        return $this->cpf;
+        return $this->endereco;
     }
 
     /**
-     * @param string|null $cpf
+     * @param string|null $endereco
      *
      * @return Pessoa
      */
-    public function setEndereco($cpf): self
+    public function setEndereco($endereco): self
     {
-        $this->cpf = $cpf;
+        $this->endereco = $endereco;
 
         return $this;
     }
@@ -222,19 +222,19 @@ class Pessoa
                     nome = :name, 
                     cpf = :cpf, 
                     idade = :age, 
-                    divida = :divida_id
-                    endereco = :endereco,
+                    divida_id = :divida_id,
+                    endereco = :endereco
                 WHERE 
-                    id = :id";
+                    idPessoa = :id";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
         // bind data
-        $stmt->bindParam(":name", $this->getNome());
-        $stmt->bindParam(":cpf", $this->getCpf());
-        $stmt->bindParam(":age", $this->getIdade());
-        $stmt->bindParam(":designation", $this->getEndereco());
-        $stmt->bindParam(":divida_id", $this->getDivida());
+        $stmt->bindValue(":name", $this->getNome());
+        $stmt->bindValue(":cpf", $this->getCpf());
+        $stmt->bindValue(":age", $this->getIdade());
+        $stmt->bindValue(":endereco", $this->getEndereco());
+        $stmt->bindValue(":divida_id", $this->getDivida());
         $stmt->bindValue(":id", $this->getId());
 
         if($stmt->execute()){
